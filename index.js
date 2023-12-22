@@ -21,7 +21,15 @@ if (require.main === module) (async () => {
     .map(dirent => dirent.name);
 
   files.forEach(file => {
-    let newDirname = `${dirname}/${file.split('.')[0].replace(/\//,"／")}`;
+    let split = file.split('.');
+    let newDirname;
+    if (split.length > 2) {
+      let dotLastIndex = file.lastIndexOf('.');
+      let requiredPath = file.slice(0, dotLastIndex).replace(/\//,"／");
+      newDirname = `${dirname}/${requiredPath}`;
+    } else {
+      newDirname = `${dirname}/${split[0].replace(/\//,"／")}`;
+    }
     fs.mkdirSync(newDirname, { recursive: true });
     fs.renameSync(`${dirname}/${file}`, `${newDirname}/${file}`);
   });
