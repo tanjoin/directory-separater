@@ -1,0 +1,14 @@
+{
+  "name": "directory-separater",
+  "version": "1.0.0",
+  "description": "ファイルをディレクトリに入れて個別に分けます。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tanjoin",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.1.0"
+  }
+}
