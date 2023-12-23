@@ -1,5 +1,5 @@
-const fs = require('fs');
-const { program } = require('commander');
+import { readdirSync, mkdirSync, renameSync } from 'fs';
+import { program } from 'commander';
 
 if (require.main === module) (async () => {
   program
@@ -16,7 +16,7 @@ if (require.main === module) (async () => {
   }
   const dirname = program.args[0];
  
-  const files = fs.readdirSync(dirname, { withFileTypes: true })
+  const files = readdirSync(dirname, { withFileTypes: true })
     .filter(dirent => dirent.isFile())
     .map(dirent => dirent.name);
 
@@ -30,7 +30,7 @@ if (require.main === module) (async () => {
     } else {
       newDirname = `${dirname}/${split[0].replace(/\//,"／")}`;
     }
-    fs.mkdirSync(newDirname, { recursive: true });
-    fs.renameSync(`${dirname}/${file}`, `${newDirname}/${file}`);
+    mkdirSync(newDirname, { recursive: true });
+    renameSync(`${dirname}/${file}`, `${newDirname}/${file}`);
   });
 })().catch(e => console.error(e));

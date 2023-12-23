@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "ファイルをディレクトリに入れて個別に分けます。",
   "bin": {
-    "directoryseparater": "node index.js"
+    "directoryseparater": "index.js"
   },
   "author": "tanjoin",
   "license": "ISC",
