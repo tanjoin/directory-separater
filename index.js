@@ -33,7 +33,7 @@ if (require.main === module) (async () => {
     let newDirname;
     if (split.length > 2) {
       let dotLastIndex = file.lastIndexOf('.');
-      let requiredPath = file.slice(0, dotLastIndex).replace(/\//,"／").replace(/\./g,"．");
+      let requiredPath = file.slice(0, dotLastIndex).replace(/\//ig,"／").replace(/\./ig,"．");
       newDirname = `${dirname}/${requiredPath}`;
     } else {
       newDirname = `${dirname}/${split[0].replace(/\//,"／")}`;
