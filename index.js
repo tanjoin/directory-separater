@@ -1,3 +1,11 @@
+#!/usr/bin/env node
+
+/**
+ * directory-separater
+ * ファイルをディレクトリに入れて個別に分けます。
+ * ver. 1.0.0
+ */
+
 const fs = require("fs");
 const { program } = require("commander");
 
@@ -6,7 +14,7 @@ if (require.main === module) (async () => {
     .name('comic fuz downloader')
     .description('ファイルをディレクトリに入れて個別に分けます。')
     .argument('<string>', 'ディレクトリパス')
-    .version('0.0.1');
+    .version('1.0.0');
 
   program.parse();
 
